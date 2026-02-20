@@ -1,6 +1,6 @@
 # TSLA Next-Day Direction Predictor
 
-**Course:** Machine Learning (IDSS32204) — Mini Project 2: Trading
+**Mini Project 2: Trading**
 
 Binary classification — predict whether Tesla (TSLA) stock closes **higher or lower** the next trading day using alternative data and ensemble models.
 
@@ -10,13 +10,13 @@ Binary classification — predict whether Tesla (TSLA) stock closes **higher or 
 
 | Model | L/F Return | L/F Sharpe | Max Drawdown | Hit Rate |
 |-------|-----------|------------|--------------|----------|
-| Random Forest | +451% | 3.34 | -21% | 61% |
-| Neural Net (MLP) | +295% | 2.27 | -24% | 67% |
-| XGBoost | +240% | 1.77 | -25% | 60% |
-| Logistic Regression | +82% | 0.73 | -39% | 55% |
+| Random Forest | +446% | 2.72 | -22% | 60% |
+| Neural Net (MLP) | +199% | 1.34 | -30% | 56% |
+| XGBoost | +183% | 1.30 | -30% | 56% |
+| Logistic Regression | +180% | 1.46 | -33% | 61% |
 | **Buy & Hold** | **+65%** | — | -54% | — |
 
-Tested across 5 independent years (2021–2025) — 16/20 year-model combinations show positive Sharpe ratios.
+Tested across 5 independent years (2021–2025) — 15/20 year-model combinations show positive Sharpe ratios.
 
 ---
 
@@ -96,7 +96,7 @@ Or open `presentation.ipynb` for a clean end-to-end walkthrough.
 
 ```
 Raw Data → EDA → Feature Engineering (109 → 25 features)
-       → Modeling (LR, RF, XGBoost, MLP + Optuna tuning)
+       → Modeling (LR, RF, XGBoost, MLP + RandomSearch/Optuna tuning + calibration)
        → Walk-Forward Backtesting (6-month retrain windows)
        → Robustness Testing (5 independent years)
 ```
@@ -114,7 +114,8 @@ Raw Data → EDA → Feature Engineering (109 → 25 features)
 ## Key Findings
 
 1. **Tweet word score is the strongest single predictor** — swings P(Up next day) from 42% (bearish tweets) to 80% (bullish tweets)
-2. **Random Forest dominates** — +451% Long/Flat return vs +65% Buy & Hold, Sharpe 3.34
-3. **The edge is statistically significant** — 4.8 standard deviations above 100 random baselines (Monte Carlo)
-4. **Robust across market regimes** — profitable in bull (2021, 2023, 2024) and defensive in bear (2022, −65% B&H)
-5. **Long/Flat beats Long/Short** — similar Sharpe but dramatically lower drawdowns (−21% vs −55%)
+2. **Random Forest dominates** — +446% Long/Flat return vs +65% Buy & Hold, Sharpe 2.72
+3. **The edge is statistically significant** — 6.6 standard deviations above 100 random baselines (Monte Carlo)
+4. **Calibration matters** — Platt scaling improves tree-based models and MLPs, but overcorrects Logistic Regression (skipped for LR)
+5. **Robust across market regimes** — profitable in bull (2021, 2023, 2024) and defensive in bear (2022, −65% B&H)
+6. **Long/Flat beats Long/Short** — similar Sharpe but dramatically lower drawdowns (−22% vs −40%)
