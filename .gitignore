@@ -1,0 +1,28 @@
+# Virtual environment
+.venv/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+
+# Jupyter
+.ipynb_checkpoints/
+
+# IDE
+.idea/
+.vscode/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Raw & external data (too large for GitHub)
+data/raw/
+data/external/
+
+# Claude internal files
+.claude/
+
+# HTML export
+presentation.html
