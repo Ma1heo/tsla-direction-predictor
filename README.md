@@ -111,6 +111,12 @@ Raw Data → EDA → Feature Engineering (109 → 25 features)
 
 ---
 
+## Equity Curves — Default vs Tuned Models (Out-of-Sample)
+
+![Equity Curves](outputs/figures/equity_curves_default_vs_tuned.png)
+
+---
+
 ## Key Findings
 
 1. **Tweet word score is the strongest single predictor** — swings P(Up next day) from 42% (bearish tweets) to 80% (bullish tweets)
