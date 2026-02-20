@@ -38,8 +38,6 @@ Tested across 5 independent years (2021–2025) — 16/20 year-model combination
 │   └── presentation.ipynb             # Clean end-to-end presentation notebook
 ├── src/
 │   └── helpers.py          # Shared paths, target creation utility
-├── outputs/
-│   └── figures/            # Saved plots
 ├── requirements.txt
 └── README.md
 ```
