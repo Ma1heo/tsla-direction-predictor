@@ -4,6 +4,8 @@
 
 Binary classification — predict whether Tesla (TSLA) stock closes **higher or lower** the next trading day using alternative data and ensemble models.
 
+> **[Full walkthrough with charts and analysis](notebooks/presentation.ipynb)**
+
 ---
 
 ## Results (Out-of-Sample 2024–2026)
